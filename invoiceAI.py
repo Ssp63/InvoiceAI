@@ -1,5 +1,5 @@
-from dotenv import load_dotenv
-load_dotenv()  # take environment variables from .env.
+# from dotenv import load_dotenv
+# load_dotenv()  # take environment variables from .env.
 import streamlit as st
 import os
 from streamlit_lottie import st_lottie
@@ -8,8 +8,10 @@ from PIL import Image
 import google.generativeai as genai
 
 
-os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+# os.getenv("GOOGLE_API_KEY")
+# genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+GOOGLE_API_KEY = "AIzaSyDVGRchQyx7dBlSmXb5HMNwnsm0xzXIg8s"
+genai.configure(api_key=GOOGLE_API_KEY)
 
 def get_gemini_response(input, image, prompt):
     model = genai.GenerativeModel('gemini-1.5-flash')
